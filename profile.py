@@ -157,9 +157,9 @@ else:
     #enb1.Desire( "rf-radiated" if params.TYPE == "ota" else "rf-controlled", 1 )
     connectOAI_DS(enb1,0)
     enb1.addService(rspec.Execute(shell="sh", command=GLOBALS.OAI_CONF_SCRIPT + " -r ENB"))
-    #enb1_rue1_rf = enb1.addInterface("rue1_rf")
-    enb1_usrp_if = enb1.addInterface( "usrp_if" )
-    enb1_usrp_if.addAddress( rspec.IPv4Address( "192.168.10.1", "255.255.255.0" ) )
+    enb1_rue1_rf = enb1.addInterface("rue1_rf")
+    #enb1_usrp_if = enb1.addInterface( "usrp_if" )
+    #enb1_usrp_if.addAddress( rspec.IPv4Address( "192.168.10.1", "255.255.255.0" ) )
 	
 
     # Add an OTS (Nexus 5) UE
@@ -175,9 +175,9 @@ else:
     rue1_enb1_rf = rue1.addInterface("enb1_rf")
 
     # Create the RF link between the Nexus 5 UE and eNodeB
-    #rflink2 = request.RFLink("rflink2")
-    #rflink2.addInterface(enb1_rue1_rf)
-    #rflink2.addInterface(rue1_enb1_rf)
+    rflink2 = request.RFLink("rflink2")
+    rflink2.addInterface(enb1_rue1_rf)
+    rflink2.addInterface(rue1_enb1_rf)
 
     # Add a link connecting the NUC eNB and the OAI EPC node.
     epclink.addNode(enb1)
