@@ -75,7 +75,7 @@ class GLOBALS(object):
     OAI_SIM_IMG = URN.Image(PN.PNDEFS.PNET_AM, "PhantomNet:UBUNTU14-64-OAI")
     OAI_CONF_SCRIPT = "/usr/bin/sudo /local/repository/bin/config_oai.pl"
     SIM_HWTYPE = "d430"
-    NUC_HWTYPE = "nuc5300"
+    NUC_HWTYPE = "d430"
     UE_HWTYPE = "nexus5"
 
 def connectOAI_DS(node, sim):
