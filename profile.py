@@ -148,7 +148,8 @@ else:
     #adb_t.disk_image = GLOBALS.ADB_IMG
 
     # Add a NUC eNB node.
-    enb1 = request.RawPC("enb1")
+    #enb1 = request.RawPC("enb1")
+    enb1 = request.RawPC('enb1', component_id='pc717')
     if params.FIXED_ENB:
         enb1.component_id = params.FIXED_ENB
     enb1.hardware_type = GLOBALS.NUC_HWTYPE
@@ -159,7 +160,8 @@ else:
     enb1_rue1_rf = enb1.addInterface("rue1_rf")
 
     # Add an OTS (Nexus 5) UE
-    rue1 = request.RawPC("rue1")
+    #rue1 = request.RawPC("rue1")
+    rue1 = request.RawPC('rue1', component_id='pc840')
     if params.FIXED_UE:
         rue1.component_id = params.FIXED_UE
     rue1.hardware_type = GLOBALS.NUC_HWTYPE
